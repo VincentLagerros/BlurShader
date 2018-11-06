@@ -1,0 +1,14 @@
+[bootstrap]
+main_collection = /main/main.collectionc
+render = /main/shader stuff/deffx.renderc
+
+[script]
+shared_state = 1
+
+[display]
+width = 960
+height = 640
+
+[project]
+title = Blur Shader
+

@@ -1,0 +1,9 @@
+images {
+  image: "/main/editor2-alpha-logo@2x.png"
+}
+images {
+  image: "/main/banner.jpg"
+}
+margin: 2
+extrude_borders: 0
+inner_padding: 0

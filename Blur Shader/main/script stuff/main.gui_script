@@ -1,0 +1,40 @@
+function init(self)
+	self.blur = 1
+	self.blur_scale = 1
+
+	msg.post(".", "acquire_input_focus")
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	gui.set_text(gui.get_node("text"), "Size: " .. self.blur ..  " Res: " .. self.blur_scale .. " (Loops: " .. (self.blur_scale*3)^2 .. ")" )
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	if action.pressed and action_id == hash("blur") then 
+		self.blur = self.blur%10 + 1
+		model.set_constant("/unitquad#unitquad", "si", vmath.vector4(self.blur-1, self.blur_scale, 0, 0))
+
+	end
+	if action.pressed and action_id == hash("scale") then 
+		self.blur_scale = self.blur_scale%4 + 1
+		model.set_constant("/unitquad#unitquad", "si", vmath.vector4(self.blur-1, self.blur_scale, 0, 0))
+
+	end
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end
