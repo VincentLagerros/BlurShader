@@ -1,2 +1,2 @@
 Blur shader made for Defold,
-Change setting with Space and R
+Change settings with Space and R
